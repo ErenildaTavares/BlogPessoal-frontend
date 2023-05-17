@@ -4,15 +4,22 @@
 
 .textos1{
     font-weight: bold !important;
-    
-    
 }
 
 .imgLogin{
-    background-image: url('https://i.imgur.com/XPdjuFS.png');
+    background-image: url('https://i.imgur.com/j0cdvbU.jpeg');
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     
 }
+
+    .corLog{
+    background-color: rgba(6, 94, 142, 0.259);
+    color: aliceblue !important;
+    }
+
+    .cor{
+        color: #4557e0eb !important;
+    }
 

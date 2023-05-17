@@ -5,26 +5,23 @@ import { Link } from "react-router-dom";
 function login() {
   return (
     <>
-      <Grid container alignItems="center" className="imgLogin">
+      <Grid container alignItems="center" justifyContent="center" className="imgLogin">
         <Grid item xs={6}>
           <Box
             display={"flex"}
             flexDirection={"column"}
             justifyContent={"center"}
-            paddingX={20}
-            
+            paddingX={23}
           >
             <form>
-              <Box>
+              <Box className="textos1">
                 <Typography
                   variant="h4"
                   gutterBottom
                   color="textPrimary"
                   component={"h3"}
                   align="center"
-                  className="textos1"
-                  
-                  
+                  className="cor"
                 >
                   Login
                 </Typography>
@@ -33,6 +30,7 @@ function login() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
+                  className="corLog"
                 />
                 <TextField
                   label="Senha"
@@ -40,7 +38,7 @@ function login() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
-
+                  className="corLog"
                 />
                 <Box marginTop={2} textAlign="center">
                   <Link to={"/home"} className="text-decorator-none">
@@ -52,8 +50,8 @@ function login() {
               </Box>
             </form>
             <Box display="flex" justifyContent="center" marginTop={2}>
-              <Box marginRight={1}>
-                <Typography variant="subtitle1" gutterBottom align="center">
+              <Box marginRight={1} className="cor">
+                <Typography variant="subtitle1" gutterBottom align="center" >
                   Não tem uma conta?
                 </Typography>
               </Box>
@@ -61,15 +59,14 @@ function login() {
                 variant="subtitle1"
                 gutterBottom
                 align="center"
-                className="textos1"
+                className="textos1 cor"
               >
                 Cadastre-se
               </Typography>
             </Box>
           </Box>
+          </Grid>
         </Grid>
-        <Grid item xs={6}  ></Grid>
-      </Grid>
     </>
   );
 }
