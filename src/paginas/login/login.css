@@ -1,0 +1,18 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.textos1{
+    font-weight: bold !important;
+    
+    
+}
+
+.imgLogin{
+    background-image: url('https://i.imgur.com/XPdjuFS.png');
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+

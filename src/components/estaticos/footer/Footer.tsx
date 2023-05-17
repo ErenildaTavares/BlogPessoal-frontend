@@ -1,6 +1,7 @@
 import { Grid, Box, Typography } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { GitHub } from "@material-ui/icons";
+import"./Footer.css"
 
 function Footer() {
   return (
@@ -12,7 +13,7 @@ function Footer() {
         alignItems="center"
       >
         <Grid alignItems="center" item xs={12}>
-          <Box style={{ backgroundColor: "#3F51B5", height: "120px" }}>
+          <Box className="box1">
             <Box
               paddingTop={1}
               display="flex"
@@ -23,43 +24,43 @@ function Footer() {
                 variant="h5"
                 align="center"
                 gutterBottom
-                style={{ color: "white" }}
+                className="textos"
               >
                 Entre em contato ou me siga{" "}
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center">
               <a href="https://github.com/ErenildaTavares" target="_blank">
-                <GitHub style={{ fontSize: 50, color: "white" }} />
+                <GitHub className="redes" />
               </a>
               <a
                 href="https://www.linkedin.com/in/erenilda-tavares/"
                 target="_blank"
               >
-                <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
+                <LinkedInIcon className="redes" />
               </a>
             </Box>
           </Box>
-          <Box style={{ backgroundColor: "#303F9F", height: "60px" }}>
+          <Box className="box2">
             <Box paddingTop={1}>
               <Typography
                 variant="subtitle2"
                 align="center"
                 gutterBottom
-                style={{ color: "white" }}
+                className="textos"
               >
                 © 2020 Copyright:
               </Typography>
             </Box>
             <Box>
-              <a target="_blank" href="https://brasil.generation.org">
+              <a target="_blank" href="https://www.linkedin.com/in/erenilda-tavares/">
                 <Typography
                   variant="subtitle2"
                   gutterBottom
-                  style={{ color: "white" }}
+                  className="textos"
                   align="center"
                 >
-                  brasil.generation.org
+                  Erenilda Tavares
                 </Typography>
               </a>
             </Box>
