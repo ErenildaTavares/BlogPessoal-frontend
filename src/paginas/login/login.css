@@ -1,25 +1,24 @@
-.text-decorator-none{
-    text-decoration: none;
+.text-decorator-none {
+  text-decoration: none;
 }
 
-.textos1{
-    font-weight: bold !important;
+.textos1 {
+  font-weight: bold !important;
 }
 
-.imgLogin{
-    background-image: url('https://i.imgur.com/j0cdvbU.jpeg');
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+.imgLogin {
+  /* background-image: url("https://i.imgur.com/j0cdvbU.jpeg"); */
+  background-image: url("https://i.pinimg.com/564x/4b/a9/c5/4ba9c5575878537eaf72393c21cadd15.jpg");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-    .corLog{
-    background-color: rgba(6, 94, 142, 0.259);
-    color: aliceblue !important;
-    }
+.corpoLog {
+  background-color: #ebf1f14e;
+  color: aliceblue !important;
+}
 
-    .cor{
-        color: #4557e0eb !important;
-    }
-
+.corLogin {
+  color: #4557e0eb !important;
+}

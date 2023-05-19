@@ -1,0 +1,13 @@
+.imgCadastro {
+  background-image: url("https://i.pinimg.com/564x/4b/a9/c5/4ba9c5575878537eaf72393c21cadd15.jpg");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.textos2{
+  font-weight: bold !important;
+}
+
+.btnCancelar{
+  margin-right: 20px !important;
+}

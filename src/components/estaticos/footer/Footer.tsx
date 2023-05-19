@@ -1,7 +1,7 @@
 import { Grid, Box, Typography } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { GitHub } from "@material-ui/icons";
-import"./Footer.css"
+import "./Footer.css";
 
 function Footer() {
   return (
@@ -53,7 +53,10 @@ function Footer() {
               </Typography>
             </Box>
             <Box>
-              <a target="_blank" href="https://www.linkedin.com/in/erenilda-tavares/">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/erenilda-tavares/"
+              >
                 <Typography
                   variant="subtitle2"
                   gutterBottom
