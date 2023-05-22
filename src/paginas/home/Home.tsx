@@ -1,3 +1,4 @@
+import TabPostagens from "../../components/postagens/tabPostagens/TabPostagens";
 import "./Home.css";
 import { Grid, Box, Typography, Button } from "@material-ui/core";
 
@@ -49,7 +50,9 @@ function Home() {
             height="500px"
           />
         </Grid>
-        <Grid xs={12} className="postagens"></Grid>
+        <Grid xs={12} className="postagens">
+          <TabPostagens/>
+        </Grid>
       </Grid>
     </>
   );

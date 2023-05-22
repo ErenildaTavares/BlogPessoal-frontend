@@ -7,8 +7,8 @@
 }
 
 .imgLogin {
-  /* background-image: url("https://i.imgur.com/j0cdvbU.jpeg"); */
-  background-image: url("https://i.pinimg.com/564x/4b/a9/c5/4ba9c5575878537eaf72393c21cadd15.jpg");
+  background-image: url("https://i.imgur.com/j0cdvbU.jpeg");
+  /* background-image: url("https://i.pinimg.com/564x/4b/a9/c5/4ba9c5575878537eaf72393c21cadd15.jpg"); */
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,4 +21,9 @@
 
 .corLogin {
   color: #4557e0eb !important;
+}
+
+.fundoLog {
+  background-color: rgba(203, 147, 147, 0.556) !important;
+
 }

@@ -62,6 +62,7 @@ function Login() {
             flexDirection={"column"}
             justifyContent={"center"}
             paddingX={23}
+            className="fundoLog"
           >
             <form onSubmit={enviar}>
               <Box className="textos1">
