@@ -119,7 +119,7 @@ function Login() {
                   Não tem uma conta?
                 </Typography>
               </Box>
-              <Link to={"/cadastro"}>
+              <Link to={"/cadastrar"}>
                 <Typography
                   variant="subtitle1"
                   gutterBottom

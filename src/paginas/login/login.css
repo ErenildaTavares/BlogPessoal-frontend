@@ -8,15 +8,15 @@
 
 .imgLogin {
   background-image: url("https://i.imgur.com/j0cdvbU.jpeg");
-  /* background-image: url("https://i.pinimg.com/564x/4b/a9/c5/4ba9c5575878537eaf72393c21cadd15.jpg"); */
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .corpoLog {
-  background-color: #ebf1f14e;
-  color: aliceblue !important;
+  background-color: #ebf1f14e !important;
+  color: rgba(240, 248, 255, 0.125) !important;
+  align-items: center;
 }
 
 .corLogin {
@@ -24,6 +24,10 @@
 }
 
 .fundoLog {
-  background-color: rgba(203, 147, 147, 0.556) !important;
+  background-color: rgb(255, 255, 255) !important;
+  align-items: center ;
+  border-radius: 60px;
+  height: 380px;
+  width: 280px;
 
 }

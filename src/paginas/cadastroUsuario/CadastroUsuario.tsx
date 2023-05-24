@@ -139,6 +139,14 @@ function CadastroUsuario() {
               confirmSenha(event)
             }
           />
+          <TextField
+                name="foto"
+                  label="Foto de Perfil"
+                  variant="outlined"
+                  margin="normal"
+                  fullWidth
+                  className="corpoLog"
+                  />
           <Box marginTop={2} textAlign="center">
             <Link to={"/login"} className="text-decoration-none">
               <Button
