@@ -1,10 +1,10 @@
 import "./Login.css";
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
-import { UsuarioLogin } from "../../model/UsuarioLogin";
 import { ChangeEvent, useEffect, useState } from "react";
 import { login } from "../../service/Service";
 import useLocalStorage from "react-use-localstorage";
+import UsuarioLogin from "../../model/UsuarioLogin";
 
 function Login() {
   // cria a variavel para navegação interna pela rota

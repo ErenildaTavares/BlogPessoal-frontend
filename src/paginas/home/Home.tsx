@@ -1,8 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import TabPostagens from "../../components/postagens/tabPostagens/TabPostagens";
 import "./Home.css";
 import { Grid, Box, Typography, Button } from "@material-ui/core";
+import useLocalStorage from "react-use-localstorage";
+import { useEffect } from "react";
+import ModalPostagens from "../../components/postagens/modalPostagens/ModalPostagens";
 
 function Home() {
+  const navigate = useNavigate();
+  const [token, setToken] = useLocalStorage("token");
+
+  useEffect(() => {
+    if (token == "") {
+      alert("Você precisa estar logado");
+      navigate("/login");
+    }
+  }, [token]);
   return (
     <>
       <Grid
@@ -32,11 +45,13 @@ function Home() {
               align="center"
               className="titulo"
             >
-              Expresse aqui os seus pensamentos e opiniões!
+              expresse aqui os seus pensamentos e opiniões!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
-            <Box marginRight={1}></Box>
+            <Box marginRight={1}>
+              <ModalPostagens />
+            </Box>
             <Button variant="outlined" className="botao">
               Ver Postagens
             </Button>
@@ -51,10 +66,11 @@ function Home() {
           />
         </Grid>
         <Grid xs={12} className="postagens">
-          <TabPostagens/>
+          <TabPostagens />
         </Grid>
       </Grid>
     </>
   );
 }
+
 export default Home;

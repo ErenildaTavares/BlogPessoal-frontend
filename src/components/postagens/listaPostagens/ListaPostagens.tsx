@@ -5,35 +5,38 @@ import { Box } from "@mui/material";
 import "./ListaPostagens.css";
 import useLocalStorage from "react-use-localstorage";
 import { busca } from "../../../service/Service";
-import { Postagem } from '../../../model/Postagem';
+import Postagem from '../../../model/Postagem';
+
+
 
 function ListaPostagens() {
-  const [postagens, setPostagens] = useState<Postagem[]>([]);
-  const [token, setToken] = useLocalStorage("token");
+  const [postagens, setPostagens] = useState<Postagem[]>([])
   const navigate = useNavigate();
-
-  async function getPostagens() {
-    await busca("/postagens", setPostagens, {
-      Headers: {
-        Autorization: token
+  const [token, setToken] = useLocalStorage('token');
+  
+  function getPostagens() {
+    busca('/postagens', setPostagens, {
+      headers: {
+        Authorization: token
       }
-    });
+    })
   }
+  
   useEffect(() => {
     getPostagens()
-  }, [postagens.length])
+  }, [])
 
   useEffect(() => {
-    if (token == "") {
-      alert("Voce precisa estar logado");
-      navigate("/login");
+    if(token === ''){ 
+      alert('Você precisa estar logado')
+      navigate('/login')
     }
-  }, [token]);
+  }, [])
 
   return (
     <>
     {
-      postagens.map(postagem =>(
+      postagens.map(postagens =>(
       <Box m={2}>
         <Card variant="outlined">
           <CardContent>
@@ -41,18 +44,22 @@ function ListaPostagens() {
               Postagens
             </Typography>
             <Typography variant="h5" component="h2">
-              {postagem.titulo}
+              {postagens.titulo}
             </Typography>
             <Typography variant="h5" component="h2">
-              {postagem.texto}
+              {postagens.texto}
             </Typography>
-          </CardContent>
+          {/* <Typography>{new Intl.DateTimeFormat('pt-br', {
+              dateStyle: 'full'
+            }).format(new Date(postagens.data))}
+            </Typography> */}
           <Typography variant="h5" component="h2">
-              {postagem.tema?.descricao}
+              {postagens.tema?.descricao}
             </Typography>
+            </CardContent>
           <CardActions>
             <Box display="flex" justifyContent="center" mb={1.5}>
-              <Link to={`/formularioPostagens/${postagem.id}`} className="text-decorator-none">
+              <Link to={`/cadastrarPostagens/${postagens.id}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button
                     variant="contained"
@@ -64,7 +71,7 @@ function ListaPostagens() {
                   </Button>
                 </Box>
               </Link>
-              <Link to={`/deletarPostagens/${postagem.id}`} className="text-decorator-none">
+              <Link to={`/deletarPostagens/${postagens.id}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" size="small" color="secondary">
                     deletar

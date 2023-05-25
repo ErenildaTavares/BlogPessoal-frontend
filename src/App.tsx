@@ -7,13 +7,16 @@ import Login from "./paginas/login/Login";
 import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
 import ListaPostagens from "./components/postagens/listaPostagens/ListaPostagens";
 import ListaTemas from "./components/temas/listaTemas/ListaTemas";
-
+import CadastrarPostagens from "./components/postagens/cadastrarPostagens/CadastrarPostagens";
+import DeletarPostagens from "./components/postagens/deletarPostagens/DeletarPostagens";
+import CadastrarTemas from "./components/temas/cadastrarTemas/CadastrarTemas";
+import DeletarTemas from "./components/temas/deletarTemas/DeletarTemas";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div style={{ minHeight: "100vh" }}>
+      <div style={{ minHeight: "85vh" }}>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
@@ -21,6 +24,12 @@ function App() {
           <Route path="/cadastrar" element={<CadastroUsuario />} />
           <Route path="/postagens" element={<ListaPostagens />} />
           <Route path="/temas" element={<ListaTemas />} />
+          <Route path="/cadastrarPostagens" element={<CadastrarPostagens />} />
+          <Route path="/cadastrarPostagens/:id" element={<CadastrarPostagens />}/>
+          <Route path="/cadastrarTemas" element={<CadastrarTemas />} />
+          <Route path="/cadastrarTemas/:id" element={<CadastrarTemas />} />
+          <Route path="/deletarPostagens/:id" element={<DeletarPostagens />} />
+          <Route path="/deletarTema/:id" element={<DeletarTemas />} />
         </Routes>
       </div>
       <Footer />
