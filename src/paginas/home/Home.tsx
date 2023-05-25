@@ -1,14 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TabPostagens from "../../components/postagens/tabPostagens/TabPostagens";
 import "./Home.css";
 import { Grid, Box, Typography, Button } from "@material-ui/core";
-import useLocalStorage from "react-use-localstorage";
 import { useEffect } from "react";
 import ModalPostagens from "../../components/postagens/modalPostagens/ModalPostagens";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/tokensReducer";
 
 function Home() {
   const navigate = useNavigate();
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token == "") {
@@ -52,9 +55,11 @@ function Home() {
             <Box marginRight={1}>
               <ModalPostagens />
             </Box>
-            <Button variant="outlined" className="botao">
-              Ver Postagens
-            </Button>
+            <Link to="/postagens" className="text-decorator-none">
+              <Button variant="outlined" className="botao">
+                Ver Postagens
+              </Button>
+            </Link>
           </Box>
         </Grid>
         <Grid item xs={6}>

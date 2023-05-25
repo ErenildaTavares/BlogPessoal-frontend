@@ -13,15 +13,18 @@ import Tema from "../../../model/Tema";
 import Postagem from "../../../model/Postagem";
 import "./CadastrarPostagens.css";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { ChangeEvent, useEffect, useState } from "react";
 import { busca, buscaId, post, put } from "../../../service/Service";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 function CadastrarPostagens() {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [temas, setTemas] = useState<Tema[]>([]);
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) =>state.tokens
+  );
 
   useEffect(() => {
     if (token == "") {

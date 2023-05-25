@@ -2,10 +2,18 @@ import { Grid, Box, Typography } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { GitHub } from "@material-ui/icons";
 import "./Footer.css";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 function Footer() {
-  return (
-    <>
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
+  let footerComponent;
+
+  if (token !== "") {
+    footerComponent = (
       <Grid
         container
         direction="row"
@@ -70,7 +78,9 @@ function Footer() {
           </Box>
         </Grid>
       </Grid>
-    </>
-  );
+    );
+  }
+
+  return <>{footerComponent}</>;
 }
 export default Footer;

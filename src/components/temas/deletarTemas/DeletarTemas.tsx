@@ -3,15 +3,18 @@ import {Button, Card, CardActions, CardContent, Typography,
 import { Box } from "@mui/material";
 import Tema from "../../../model/Tema";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { useEffect, useState } from "react";
 import { buscaId, deleteId } from "../../../service/Service";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 function DeletarTemas() {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const [token, setToken] = useLocalStorage("token");
   const [tema, setTema] = useState<Tema>();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) =>state.tokens
+  );
 
   useEffect(() => {
     if (token === "") {

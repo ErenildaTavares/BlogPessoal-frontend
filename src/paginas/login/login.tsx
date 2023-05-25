@@ -3,15 +3,17 @@ import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import { ChangeEvent, useEffect, useState } from "react";
 import { login } from "../../service/Service";
-import useLocalStorage from "react-use-localstorage";
 import UsuarioLogin from "../../model/UsuarioLogin";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/actions";
 
 function Login() {
   // cria a variavel para navegação interna pela rota
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // cria um estado para armazenamento no localStorage do navegador
-  const [token, setToken] = useLocalStorage("token");
+  const [token, setToken] = useState("");
 
   // cria um estado de controle para o usuário preencher os dados de login
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
@@ -44,6 +46,7 @@ function Login() {
   //quando chega algo diferente de vazio, navega o usuario pra home
   useEffect(() => {
     if (token !== "") {
+      dispatch(addToken(token))
       navigate("/home");
     }
   }, [token]);
