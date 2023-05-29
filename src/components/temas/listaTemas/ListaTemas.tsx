@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Card,
-  CardActions,
-  CardContent,
-  Button,
-  Typography,
+  CardActions, CardContent, Button, Typography,
 } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./ListaTemas";
@@ -14,6 +11,7 @@ import { busca } from "../../../service/Service";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
+import { toast } from "react-toastify";
 
 function ListaTemas() {
   const [temas, setTemas] = useState<Tema[]>([])
@@ -34,7 +32,16 @@ function ListaTemas() {
       })
     } catch (error: any) {
       if(error.toString().includes('403')) {
-        alert('O seu token expirou, logue novamente')
+        toast.error('O seu token expirou, por favor, logue novamente', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
         dispatch(addToken(''))
         navigate('/login')
       }
@@ -47,7 +54,16 @@ function ListaTemas() {
 
   useEffect(() => {
     if(token === ''){ 
-      alert('Você precisa estar logado')
+      toast.error('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
       navigate('/login')
     }
   }, [])

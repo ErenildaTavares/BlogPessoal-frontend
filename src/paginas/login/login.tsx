@@ -6,6 +6,7 @@ import { login } from "../../service/Service";
 import UsuarioLogin from "../../model/UsuarioLogin";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/actions";
+import { toast } from "react-toastify";
 
 function Login() {
   // cria a variavel para navegação interna pela rota
@@ -38,9 +39,27 @@ function Login() {
     event.preventDefault();
     try {
       await login("/usuarios/logar", usuarioLogin, setToken);
-      alert("Usuario logado com sucesso");
+      toast.success("Usuario logado com sucesso", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     } catch (error) {
-      alert("Usuario e/ou senha inválidos");
+      toast.error("Usuario e/ou senha inválidos", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     }
   }
   //quando chega algo diferente de vazio, navega o usuario pra home

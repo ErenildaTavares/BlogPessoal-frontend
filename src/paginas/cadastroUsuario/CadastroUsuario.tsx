@@ -1,9 +1,11 @@
 import React, { useEffect, useState, ChangeEvent } from "react";
 import "./CadastroUsuario.css";
 import { Grid, Box, Typography, TextField, Button } from "@mui/material";
-import { Usuario } from "../../model/Usuario";
+
 import { Link, useNavigate } from "react-router-dom";
 import { cadastroUsuario } from "../../service/Service";
+import Usuario from "../../model/Usuario";
+import { toast } from "react-toastify";
 
 function CadastroUsuario() {
   // constante para efetuar a navegação do usuário por dentro da lógica
@@ -51,16 +53,45 @@ function CadastroUsuario() {
       // caso passe pelo IF, vai executar a tentativa de cadastro, e dar o alerta de sucesso
       try {
         await cadastroUsuario("/usuarios/cadastrar", usuario, setUsuarioResp);
-        alert("Usuário cadastrado com sucesso");
+        toast.success("Usuario cadastrado com sucesso", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
       } catch (error) {
         // se der erro no cadastro, por exemplo por e-mail repetido, vai cair nessa msg de erro
-        alert("Falha ao cadastrar o usuário, verifique os campos");
+        toast.error("Falha ao cadastrar usuario, verifique os campos", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
       }
     } else {
       // aqui é a mensagem de erro para o caso dos campos de senha estarem diferentes, vai avisar, e apagar os dois campos
-      alert(
-        "Os campos de Senha e Confirmar Senha estão diferentes! Por favor, tente novamente"
+      toast.error(
+        "Os campos de Senha e Confirmar Senha estão diferentes! Por favor, tente novamente",
+        {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        }
       );
+
       setUsuario({ ...usuario, senha: "" });
       setConfirmarSenha("");
     }
@@ -140,13 +171,13 @@ function CadastroUsuario() {
             }
           />
           <TextField
-                name="foto"
-                  label="Foto de Perfil"
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                  className="corpoLog"
-                  />
+            name="foto"
+            label="Foto de Perfil"
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            className="corpoLog"
+          />
           <Box marginTop={2} textAlign="center">
             <Link to={"/login"} className="text-decoration-none">
               <Button
