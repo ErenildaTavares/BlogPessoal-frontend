@@ -7,7 +7,6 @@ import ModalPostagens from "../../components/postagens/modalPostagens/ModalPosta
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
-
 function Home() {
   const navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -15,8 +14,8 @@ function Home() {
   );
 
   useEffect(() => {
-    if (token == "") {
-      toast.error('Você precisa estar logado', {
+    if (token === "") {
+      toast.error("Você precisa estar logado", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -29,6 +28,7 @@ function Home() {
       navigate("/login");
     }
   }, [token]);
+
   return (
     <>
       <Grid
@@ -48,7 +48,7 @@ function Home() {
               align="center"
               className="titulo"
             >
-              Seja bem vindo(a)!
+              Seja bem-vindo(a)!
             </Typography>
             <Typography
               variant="h5"
@@ -58,7 +58,7 @@ function Home() {
               align="center"
               className="titulo"
             >
-              expresse aqui os seus pensamentos e opiniões!
+              Expresse aqui os seus pensamentos e opiniões!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">

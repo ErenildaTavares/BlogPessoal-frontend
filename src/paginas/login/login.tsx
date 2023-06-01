@@ -65,7 +65,7 @@ function Login() {
   //quando chega algo diferente de vazio, navega o usuario pra home
   useEffect(() => {
     if (token !== "") {
-      dispatch(addToken(token))
+      dispatch(addToken(token));
       navigate("/home");
     }
   }, [token]);
@@ -99,7 +99,7 @@ function Login() {
                   Login
                 </Typography>
                 <TextField
-                name="usuario"
+                  name="usuario"
                   label="Nome de Usuario"
                   variant="outlined"
                   margin="normal"
@@ -111,9 +111,19 @@ function Login() {
                   }
                 />
                 <TextField
-                name="senha"
+                  name="senha"
                   label="Senha"
                   type="password"
+                  error={
+                    usuarioLogin.senha.length < 8 &&
+                    usuarioLogin.senha.length > 0
+                  }
+                  helperText={
+                    usuarioLogin.senha.length < 8 &&
+                    usuarioLogin.senha.length > 0
+                      ? "A senha tem que ter mais de 8 caracteres"
+                      : ""
+                  }
                   variant="outlined"
                   margin="normal"
                   fullWidth

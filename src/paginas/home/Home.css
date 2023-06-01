@@ -20,3 +20,35 @@
 .text-decorator-none{
   text-decoration: none;
 }
+
+/* Estilos para o modo daltônico */
+.color-blind-mode {
+  --primary-color: #ff0000;
+  --secondary-color: #00ff00;
+  --text-color: #0000ff;
+}
+
+/* Estilos para os botões de acessibilidade */
+.button-color-blind {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.button-color-blind:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.img-zoom {
+  transition: transform 0.3s ease;
+}
+
+.img-zoom:hover {
+  transform: scale(1.1);
+}
