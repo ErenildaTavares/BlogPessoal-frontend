@@ -121,7 +121,7 @@ function Login() {
                   helperText={
                     usuarioLogin.senha.length < 8 &&
                     usuarioLogin.senha.length > 0
-                      ? "A senha tem que ter mais de 8 caracteres"
+                      ? "A senha tem que ter mais no mínimo  caracteres"
                       : ""
                   }
                   variant="outlined"
