@@ -164,6 +164,20 @@ function Login() {
             </Box>
           </Box>
         </Grid>
+        <Grid className="titleB">
+          <Typography
+            variant="subtitle1"
+            gutterBottom
+            style={{ fontSize: "60px" }}
+            align="center"
+           
+          >
+            Bem Vindo!
+          </Typography>
+          <Typography style={{ fontSize: "30px" }}>
+            Faça seu login ou cadastre-se
+          </Typography>
+        </Grid>
       </Grid>
     </>
   );

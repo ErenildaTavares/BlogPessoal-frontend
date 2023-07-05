@@ -25,9 +25,13 @@
 
 .fundoLog {
   background-color: rgb(255, 255, 255) !important;
-  align-items: center ;
+  align-items: center;
   border-radius: 60px;
   height: 390px;
   width: 270px;
-
+}
+.titleB {
+  color: antiquewhite;
+ font-style: italic;
+ margin-bottom: 200px;
 }
