@@ -20,7 +20,7 @@ function TabPostagens() {
           </Tabs>
         </AppBar>
         <TabPanel value="1">
-          <Box display="flex" flexWrap="wrap" justifyContent="center">
+          <Box display="flex" flexWrap="wrap" justifyContent="center" className="fundoPost">
             <ListaPostagens />
           </Box>
         </TabPanel>

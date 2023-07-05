@@ -100,7 +100,7 @@ function Login() {
                 </Typography>
                 <TextField
                   name="usuario"
-                  label="Nome de Usuario"
+                  label="Email"
                   variant="outlined"
                   margin="normal"
                   fullWidth

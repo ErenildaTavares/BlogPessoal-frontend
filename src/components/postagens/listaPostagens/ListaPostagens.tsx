@@ -6,6 +6,7 @@ import {
   CardContent,
   Button,
   Typography,
+  Grid,
 } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./ListaPostagens.css";
@@ -56,9 +57,10 @@ function ListaPostagens() {
   return (
     <>
       {postagens.map((postagens) => (
-        <Box m={2}>
-          <Card variant="outlined">
-            <CardContent>
+        <Box m={2} >
+          <Grid >
+          <Card variant="outlined" className="estiloPosts" >
+            <CardContent >
               <Typography color="textSecondary" gutterBottom>
                 Postagens
               </Typography>
@@ -68,10 +70,10 @@ function ListaPostagens() {
               <Typography variant="h5" component="h2">
                 {postagens.texto}
               </Typography>
-              {/* <Typography>{new Intl.DateTimeFormat('pt-br', {
+              { <Typography>{new Intl.DateTimeFormat('pt-br', {
               dateStyle: 'full'
             }).format(new Date(postagens.data))}
-            </Typography> */}
+            </Typography> }
               <Typography variant="h5" component="h2">
                 {postagens.tema?.descricao}
               </Typography>
@@ -106,6 +108,7 @@ function ListaPostagens() {
               </Box>
             </CardActions>
           </Card>
+          </Grid>
         </Box>
       ))}
     </>
